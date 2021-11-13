@@ -208,7 +208,9 @@ def boxes_to_table_2(box_record_dict,uniquerows1):
     table = []
     for row in rows:
         sorted_row = sorted([b for b in boxes if b == row], key=lambda b: b)
-
-        table.append([chars_to_string_2(box_record_dict[b],uniquerows1) for b in sorted_row])
+        for b in sorted_row:
+            textToAppend = chars_to_string_2(box_record_dict[b],uniquerows1)
+            table.append(textToAppend)
+       
     return table
 
